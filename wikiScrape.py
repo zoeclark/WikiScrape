@@ -13,9 +13,8 @@ import sys
 def buzzArticle (url, n, oneGram, bigrams, d, depth, parent,  counters, onePar = False, ): 
 	"""
 	Method takes in the url of a seed wikipedia page as a string, the total recursion level n (both set by user), in addition to 3 dictionaries 
-	(1grams, 2grams, words), the current level of recursion (depth), prev tracker ('parent', an instance of the Word), and counters for the 
-	total number of pages and total number of 'needs ciation' tags. If the default 
-	boolean 'onePar' == True, the algorithm only reads the first paragraph of text, not the whole article. The method fills in each dictionary 
+	(1grams, 2grams, words), the current level of recursion (depth), prev tracker ('parent', an instance of Word), and counters for the 
+	total number of pages and total number of 'needs ciation' tags. The method fills in each dictionary 
 	by reading all links on the seed wikipage, going to all these links, reading them and so on,  
 	a until the depth of recurssion equals n. 
 	""" 
@@ -68,7 +67,7 @@ def returnBuzzwords(dictionary):
 
 def returnPaths(bigrams, d, wikiTag): 
 	"""
-	method takes in a dictionary of "bigrams" (WikiTag/ parent WikiTag pairs), a double dictionary mapping wikiTags to word instances
+	method takes in a dictionary of "bigrams" (WikiTag/ parent WikiTag pairs), d, a double dictionary mapping wikiTags to word instances
 	to frequencies, and the seed wiki url. The method takes the first 50 "bigrams" with the highest frequencies. If the bigram doesn't
 	represent a full path, a path starting with the seed URL, this method uses the double dictionary to look up the most likely path back to
 	the seed URL. 
