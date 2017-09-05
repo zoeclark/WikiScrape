@@ -14,5 +14,5 @@
 **Run Time:**
 Running the application with a recursion level of 2 takes on average 5 minutes with a solid connection. A recursion level of 3 takes me on  average 25 minutes. Ideally, a multi-threaded program would make multiple queries at the same time, but I don't want to step on Wikipedia's toes. 
   
-### Algorithm Notes:  <br />
+### Notes on the Best Paths Algorithm:  <br />
 <p> The application tracks all the best "bigrams" (pairs of wiki URLs and parent wiki URLs). Then the algorithm then examines the 5 most likely paths back to seed URL from the bigram and selects the longest path. For a given "bigram," the top 5 paths back to the seed URL are  typically multiple linear representations of the same cyclic information, so the longer the path, the more complete the (linear) representation of the cycle. I hope to return the information visually one day. A classic HMM would not use the most frequently occurring bigrams like I did; it would use the conditional probability of the bigram (the url and parent url) based on the unigram (just the url) I chose not to do this because the problem isn't interested in a probability distribution over the different paths, it just wants the most frequently occurring paths.</p> 
